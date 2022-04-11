@@ -36,7 +36,7 @@ export class AuthenticationService {
   logout() {
     localStorage.removeItem('simple_store_current_user');
     this.currentUserSubject.next(null)
-    this.router.navigateByUrl('/login')
+    this.router.navigateByUrl('/articles-board')
   }
   login(username: string, password: string): Observable<Token> {
     return this.http.post<Token>(this.baseURL.href + 'auth/login', {
