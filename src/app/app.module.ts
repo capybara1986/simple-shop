@@ -33,6 +33,7 @@ import {ArticleDetailsComponent} from './article-details/article-details.compone
 
 import {BarRatingModule} from "ngx-bar-rating";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { UserProfilComponent } from './user-profil/user-profil.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     ArticleBoardComponent,
     LoginComponent,
     ArticleDetailsComponent,
+    UserProfilComponent,
   ],
   imports: [
     BrowserModule,
