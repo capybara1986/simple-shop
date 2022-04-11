@@ -24,11 +24,9 @@ export class LoginComponent implements OnInit {
       password: [environment.testUser.password, Validators.required]
     });
   }
-
   ngOnInit(): void {
 
   }
-
   submitForm() {
     if (this.form.valid) {
       this.authenticationService.login(this.form.get('username')?.value, this.form.get('password')?.value).pipe(first())
@@ -49,8 +47,6 @@ export class LoginComponent implements OnInit {
             this.form.get('password')?.setValue('')
             this.form.clearValidators();
           });
-    } else {
-      this.error = "";
     }
   }
 }
