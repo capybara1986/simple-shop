@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseUrl: 'https://fakestoreapi.com',
-  testUser: {username:'johnd',password:'m38rmF$'}
+  testUser: {username:'',password:''}
 };
 
 /*
