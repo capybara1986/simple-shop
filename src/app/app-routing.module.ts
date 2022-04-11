@@ -5,6 +5,7 @@ import {ArticleBoardComponent} from "./article-board/article-board.component";
 import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 import {LoginComponent} from "./login/login.component";
 import {ArticleDetailsComponent} from "./article-details/article-details.component";
+import {UserProfileComponent} from "./user-profile/user-profile.component";
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'articles-board', component: ArticleBoardComponent},
   {path: 'articles-board/:id', component: ArticleDetailsComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
+  {path: 'user-profile', component: UserProfileComponent},
 
 
 

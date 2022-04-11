@@ -16,7 +16,7 @@ export interface Section {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
   title = 'simple-shop';
   articleCount = 0;
   @ViewChild('start', {static: true}) sideNav!: MatSidenav;
@@ -32,10 +32,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     })
 
   }
-
-  ngAfterViewInit(): void {
-
-  }
   goHome() {
     this.router.navigateByUrl('/home')
   }
@@ -46,11 +42,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   goShoppingCart() {
     this.router.navigateByUrl('/shopping-cart')
   }
+  goUserProfile() {
+    this.router.navigateByUrl('/user-profile')
+  }
 
   logout() {
     this.authenticationService.logout();
   }
-
 
   folders: Section[] = [
     {
@@ -70,10 +68,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       articles.forEach((item) => {
         this.shoppingCartService.add(item);
       })
-
     }
-
   }
-
-
 }

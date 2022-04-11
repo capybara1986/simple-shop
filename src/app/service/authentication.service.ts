@@ -6,9 +6,10 @@ import {environment} from "../../environments/environment";
 import {map} from "rxjs/operators";
 import {User} from "../model/User";
 
-export class Token{
-  token:string = "";
+export class Token {
+  token: string = "";
 }
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,32 +21,33 @@ export class AuthenticationService {
     this.baseURL = new URL(environment.baseUrl);
     const userData = localStorage.getItem('simple_store_current_user');
     this.currentUserSubject = new BehaviorSubject<any>(null);
-    if(userData) {
+    if (userData) {
       this.currentUserSubject.next(JSON.parse(userData));
     }
   }
-  public get currentUser() {
+
+  public get currentUser(): User | null {
     return this.currentUserSubject.value
   }
-  me() {
-    return this.http.get(this.baseURL.href + '/me');
-  }
-  getFakerUser():Observable<User> {
+  //TODO outsource to user service
+  getFakerUser(): Observable<User> {
     return this.http.get<User>(this.baseURL.href + '/users/1');
   }
-  logout() {
+
+  logout(): void {
     localStorage.removeItem('simple_store_current_user');
     this.currentUserSubject.next(null)
     this.router.navigateByUrl('/articles-board')
   }
+
   login(username: string, password: string): Observable<Token> {
     return this.http.post<Token>(this.baseURL.href + 'auth/login', {
       username,
       password
     }).pipe(
-      map((result: {token:string}) => {
+      map((result: { token: string }) => {
         let token = new Token();
-        token.token =result.token
+        token.token = result.token
         return token;
       })
     )

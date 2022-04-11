@@ -33,9 +33,9 @@ import {ArticleDetailsComponent} from './article-details/article-details.compone
 
 import {BarRatingModule} from "ngx-bar-rating";
 import {MatTooltipModule} from "@angular/material/tooltip";
-import {UserProfilComponent} from './user-profil/user-profil.component';
 import {ErrorInterceptor} from "./service/error.interceptor";
-import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {UserProfileComponent} from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
     ArticleBoardComponent,
     LoginComponent,
     ArticleDetailsComponent,
-    UserProfilComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

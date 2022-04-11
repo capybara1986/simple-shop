@@ -37,6 +37,7 @@ export class ArticleBoardComponent implements OnInit {
   goDetails(id:number) {
     this.router.navigate(['articles-board', id]);
   }
+  // TODO refactor bc duplicated
   addArticle(article: Article) {
     article.quantity = +1;
     let isInCart = this.articlesInCart.find((item) => {

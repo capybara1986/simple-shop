@@ -21,6 +21,7 @@ export class ArticleDetailsComponent implements OnInit {
               private router: Router
   ) {
   }
+  // TODO refactor bc duplicated
   addArticle(article: Article) {
     article.quantity = +1;
     let isInCart = this.articlesInCart.find((item) => {
