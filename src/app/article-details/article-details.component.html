@@ -1,0 +1,49 @@
+<mat-progress-bar mode="buffer" [value]="bufferRequest"></mat-progress-bar>
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutAlign="center">
+    <div fxFlex="50%" fxFlex.xs="100%" fxFlex.lg="60%" fxFlex.md="80%" fxFlex.sm="80%">
+      <mat-card>
+        <mat-card-title-group>
+          <mat-card-title>{{article.title}}
+            <bar-rating [readOnly]="true" [(rate)]="article.rating.rate" [max]="5"></bar-rating>
+          </mat-card-title>
+          <mat-card-subtitle>{{article.category}}</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+          <div fxFlex="100%" fxLayout="row-reverse warp">
+            <div fxLayoutAlign="center" fxFlex="50%" fxFlex.xs="100%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="100%">
+              <img alt="{{article.title}}" style="height: 350px;width: 350px" src="{{article.image}}">
+            </div>
+
+            <div fxFlex="50%" fxLayoutGap="16px grid" fxFlex.xs="100%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="100%">
+              <div>
+                <div fxFlex="100%">{{article.description}}</div>
+              </div>
+              <div fxLayout>
+                <div  fxFlex="100%">
+                  <span class="price">{{article.price}}$</span>
+                </div>
+              </div>
+              <div fxLayout>
+                <div fxFlex="100%">
+                  <button mat-raised-button color="primary" (click)="addArticle(article)">
+                    <mat-icon>add_shopping_cart</mat-icon>
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+
+
+            </div>
+
+
+          </div>
+        </mat-card-content>
+        <mat-action-list>
+
+
+        </mat-action-list>
+      </mat-card>
+    </div>
+  </div>
+</div>

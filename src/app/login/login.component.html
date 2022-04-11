@@ -1,0 +1,22 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center start">
+  <mat-card>
+    <mat-card-content>
+    <form (ngSubmit)="submitForm()" [formGroup]="form" class="example-form">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input autocomplete="on" [formControlName]="'username'" matInput placeholder="Username">
+          <mat-error *ngIf="form.get('username')?.errors">email required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input type="password" autocomplete="on" [formControlName]="'password'"  matInput placeholder="Password">
+          <mat-error *ngIf="form.get('password')?.errors">password required</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-error *ngIf="error">{{error}}</mat-error>
+      <button [disabled]="!form.valid" mat-stroked-button color="primary" class="btn-block">Log in</button>
+    </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>

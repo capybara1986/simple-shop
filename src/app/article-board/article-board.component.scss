@@ -1,0 +1,82 @@
+.thumbnail{
+ text-align: center;
+}
+
+mat-card img {
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+}
+.price {
+  font-size: 1.3em;
+  margin: auto;
+  padding: 10px;
+}
+
+
+mat-card mat-card-content {
+  height: 50px;
+  font-size: 1.0em;
+  padding: 10px;
+  word-break: keep-all;
+}
+mat-card-content span{
+  cursor: pointer;
+}
+mat-card-actions {
+  text-align: center;
+}
+mat-card-actions button {
+  margin: 0;
+}
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 200px;
+}
+
+@media (min-width: 360px) {
+
+  mat-card-header {
+    mat-card-title {
+      font-size: 1.2em;
+    }
+  }
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+  mat-card-header {
+    mat-card-title {
+      font-size: 1.2em;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+  mat-card-header {
+    mat-card-title {
+      font-size: 1em;
+    }
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  mat-card-header {
+    mat-card-title {
+      font-size: 1.5em;
+    }
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+
+}

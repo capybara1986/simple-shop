@@ -1,0 +1,65 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+a:link {
+  color: black;
+  background-color: white;
+  text-decoration-line: none;
+}
+
+mat-list-item {
+  cursor: pointer;
+}
+mat-toolbar span {
+  cursor: pointer;
+}
+mat-toolbar span:hover {
+  text-decoration-line: underline;
+}
+mat-list-item:hover{
+  background-color: black;
+  color: white;
+}
+.active {
+  background-color: black;
+  color: white;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 64px);
+}
+
+@media (min-width: 360px) {
+  mat-list {
+    width: 150px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  mat-list {
+    width: 150px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  mat-list {
+    width: 150px;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  mat-list {
+    width: 200px;
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  mat-list {
+    width: 200px;
+  }
+}

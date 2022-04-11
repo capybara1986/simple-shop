@@ -1,0 +1,56 @@
+.content {
+  padding: 16px;
+}
+
+.mat-column-name {
+  flex: 0 0 80%;
+}
+
+.tooltip-red {
+  background: #b71c1c;
+}
+.mat-table {
+  width: 100%;
+  .mat-icon {
+    color: red;
+    cursor: pointer;
+  }
+}
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+@media (min-width: 360px) {
+  .mat-table {
+    width: 100%;
+    .mat-cell {
+      font-size: 0.8em;
+    }
+    .mat-header-cell {
+      font-size: 0.9em;
+    }
+    .mat-cell:last-child  {
+      text-align: right;
+    }
+    .mat-header-cell:last-child  {
+      text-align: right;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .mat-table {
+    width: 100%;
+    .mat-cell {
+      font-size: 1em;
+    }
+    .mat-header-cell {
+      font-size: 1em;
+    }
+  }
+}

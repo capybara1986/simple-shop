@@ -1,0 +1,25 @@
+<mat-progress-bar mode="buffer" [value]="bufferRequest"></mat-progress-bar>
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="20%" fxFlex.xs="100%" fxFlex.lg="20%" fxFlex.md="30%" fxFlex.sm="50%" *ngFor="let article of articles">
+
+      <mat-card class="mat-elevation-z4">
+
+        <div class="thumbnail">
+          <img alt="{{article.title}}"  (click)="goDetails(article.id)"  src="{{article.image}}">
+        </div>
+        <mat-card-content>
+          <span (click)="goDetails(article.id)">{{article.title}} </span>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="price">{{article.price}}$ </div>
+          <button mat-button color="primary" (click)="addArticle(article)">
+            <mat-icon>add_shopping_cart</mat-icon>
+            Add to cart
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

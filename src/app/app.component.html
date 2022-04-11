@@ -1,0 +1,39 @@
+<mat-toolbar>
+  <button (click)="start.toggle()" mat-icon-button aria-label="icon-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span (click)="goHome()">SimpleShop</span>
+  <span class="example-spacer"></span>
+  <button (click)="goShoppingCart()" mat-icon-button class="favorite-icon"
+          aria-label="Example icon-button with heart icon">
+    <mat-icon [matBadgeHidden]="articleCount===0" matBadge="{{articleCount}}" matBadgeSize="small" matBadgeColor="warn">
+      shopping_cart
+    </mat-icon>
+  </button>
+  <button *ngIf="authenticationService.currentUser" mat-icon-button
+          aria-label="icon">
+    <mat-icon>account_box</mat-icon>
+  </button>
+  <button (click)="logout()" *ngIf="authenticationService.currentUser" mat-icon-button
+          aria-label="icon">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+  <button (click)="goLogin()" *ngIf="authenticationService.currentUser===null" mat-icon-button
+          aria-label="icon">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #start [mode]="'over'">
+    <mat-list>
+      <h3 matSubheader>Menu</h3>
+      <mat-list-item routerLink="{{folder.path}}" routerLinkActive="active" *ngFor="let folder of folders">
+        <a matLine>{{folder.name}}</a>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

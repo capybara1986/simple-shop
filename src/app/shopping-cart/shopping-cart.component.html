@@ -1,0 +1,85 @@
+<mat-progress-bar mode="buffer" [value]="bufferRequest"></mat-progress-bar>
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid" fxLayoutAlign="center">
+
+    <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="33%">
+      <mat-card fxLayout="column">
+        <mat-card-content>
+          <table mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> name</th>
+              <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="quantity">
+              <th mat-header-cell *matHeaderCellDef> quantity</th>
+              <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="price">
+              <th mat-header-cell *matHeaderCellDef> price</th>
+              <td mat-cell *matCellDef="let element"> {{element.price}} €</td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let element">
+                <mat-icon (click)="removeArticle(element)">remove_shopping_cart</mat-icon>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </mat-card-content>
+      </mat-card>
+      <mat-card *ngIf="dataSource.data.length !== 0" fxLayoutAlign="end" fxLayout="row">
+        <mat-card-content>
+
+          <div fxLayout="row">
+            <div><b>Total: </b></div>
+            <div><b>{{totalSum}} </b> <em>(inkl 19% MwSt)</em></div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
+      <mat-card fxLayout="column">
+
+        <mat-card-content *ngIf="authenticationService.currentUser === null">
+          <label id="example-radio-group-label">How will you continue?</label>
+          <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+            [(ngModel)]="favoriteOption">
+            <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="option.value">
+              {{option.label}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </mat-card-content>
+        <mat-card-content *ngIf="authenticationService.currentUser">
+          <div fxLayout="row"><b>We deliver the stuff here:</b></div>
+          <div fxLayout="row">{{currentUser.name.firstname}} {{currentUser.name.lastname}}</div>
+          <div fxLayout="row">{{currentUser.address.street}} {{currentUser.address.number}}</div>
+          <div fxLayout="row">{{currentUser.address.zip}} {{currentUser.address.city}}</div>
+          <div fxLayout="row">{{currentUser.address.country}}</div>
+        </mat-card-content>
+        <mat-card-content *ngIf="authenticationService.currentUser===null" fxLayout="row" fxLayoutAlign="center">
+          <button matTooltipClass="tooltip-red" matTooltip="not implemented yet" [disabled]="!favoriteOption" mat-flat-button color="primary">Checkout your order</button>
+        </mat-card-content>
+        <mat-card-content *ngIf="authenticationService.currentUser" fxLayout="row" fxLayoutAlign="center">
+          <button matTooltipClass="tooltip-red" matTooltip="not implemented yet" mat-raised-button color="primary">
+            Checkout your order
+          </button>
+        </mat-card-content>
+      </mat-card>
+
+
+    </div>
+  </div>
+</div>
+
