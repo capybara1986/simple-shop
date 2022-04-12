@@ -3,9 +3,9 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span (click)="goHome()">SimpleShop</span>
-  <span class="example-spacer"></span>
+  <span class="spacer"></span>
   <button (click)="goShoppingCart()" mat-icon-button class="favorite-icon"
-          aria-label="Example icon-button with heart icon">
+          aria-label="icon">
     <mat-icon [matBadgeHidden]="articleCount===0" matBadge="{{articleCount}}" matBadgeSize="small" matBadgeColor="warn">
       shopping_cart
     </mat-icon>

@@ -1,8 +1,7 @@
 export class Address {
-  zip = "";
+  zipcode = "";
   city = "";
   country = "";
   number = "";
   street = "";
-  phone = "";
 }

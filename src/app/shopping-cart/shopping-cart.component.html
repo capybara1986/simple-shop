@@ -65,7 +65,7 @@
           <div fxLayout="row"><b>We deliver the stuff here:</b></div>
           <div fxLayout="row">{{currentUser.name.firstname}} {{currentUser.name.lastname}}</div>
           <div fxLayout="row">{{currentUser.address.street}} {{currentUser.address.number}}</div>
-          <div fxLayout="row">{{currentUser.address.zip}} {{currentUser.address.city}}</div>
+          <div fxLayout="row">{{currentUser.address.zipcode}} {{currentUser.address.city}}</div>
           <div fxLayout="row">{{currentUser.address.country}}</div>
         </mat-card-content>
         <mat-card-content *ngIf="authenticationService.currentUser===null" fxLayout="row" fxLayoutAlign="center">

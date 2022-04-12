@@ -1,14 +1,79 @@
 <mat-progress-bar mode="buffer" [value]="bufferRequest"></mat-progress-bar>
 <div class="content">
   <div fxLayout="row wrap" fxLayoutAlign="center">
-    <div fxFlex="50%" fxFlex.xs="100%" fxFlex.lg="60%" fxFlex.md="80%" fxFlex.sm="80%">
+    <div fxFlex="30%" fxFlex.xs="100%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="80%">
 
       <mat-card>
         <mat-card-header>
-          <mat-card-title></mat-card-title>
-          <mat-card-subtitle></mat-card-subtitle>
+          <mat-card-title>User Information</mat-card-title>
         </mat-card-header>
-        <mat-card-content>WIP</mat-card-content>
+        <mat-card-content>
+
+
+          <div fxLayout="row wrap">
+            <div fxFlex="50%">
+              <div fxLayout="row wrap">
+                <div fxFlex="100%"><b>Contact</b></div>
+              </div>
+              <div fxLayout="row wrap">
+                <div fxFlex="50%">Name</div>
+                <div fxFlex="50%">{{user.name.firstname}} {{user.name.lastname}}</div>
+              </div>
+
+            </div>
+            <div fxFlex="50%">
+              <div fxLayout="row wrap">
+                <div fxFlex="100%"><b>Address</b></div>
+              </div>
+              <div fxLayout="row wrap">
+                <div fxFlex="50%">City</div>
+                <div fxFlex="50%">{{user.address.city}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div fxLayout="row wrap">
+            <div fxFlex="50%">
+              <div fxLayout="row wrap">
+                <div fxFlex="50%">Email</div>
+                <div fxFlex="50%">{{user.email}}</div>
+              </div>
+
+            </div>
+            <div fxFlex="50%">
+              <div fxLayout="row wrap">
+                <div fxFlex="50%">Street</div>
+                <div fxFlex="50%">{{user.address.street}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div  fxLayout="row wrap">
+            <div fxFlex="50%">
+              <div fxLayout="row wrap">
+                <div fxFlex="50%">phone</div>
+                <div fxFlex="50%">{{user.phone}}</div>
+              </div>
+
+            </div>
+            <div fxFlex="50%">
+              <div fxLayout="row wrap">
+                <div fxFlex="50%">number</div>
+                <div fxFlex="50%">{{user.address.number}}</div>
+              </div>
+            </div>
+          </div>
+          <div fxLayoutAlign="end" fxLayout="row wrap">
+
+            <div fxFlex="50%">
+              <div fxLayout="row wrap">
+                <div fxFlex="50%">zipcode</div>
+                <div fxFlex="50%">{{user.address.zipcode}}</div>
+              </div>
+            </div>
+          </div>
+
+        </mat-card-content>
       </mat-card>
     </div>
   </div>

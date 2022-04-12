@@ -5,6 +5,7 @@ export class User {
   id = "";
   username = "";
   email = "";
+  phone = "";
   name: { firstname: string, lastname: string } = {
     firstname: "",
     lastname: ""

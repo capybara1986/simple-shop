@@ -36,6 +36,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import {ErrorInterceptor} from "./service/error.interceptor";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {UserProfileComponent} from './user-profile/user-profile.component';
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import {UserProfileComponent} from './user-profile/user-profile.component';
     MatTableModule,
     MatRadioModule,
     MatPaginatorModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatGridListModule
   ],
   providers: [
     {
